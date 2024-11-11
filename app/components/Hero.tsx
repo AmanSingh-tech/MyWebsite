@@ -1,53 +1,46 @@
-import React from 'react';
-import { Spotlight } from './ui/Spotlight';
+"use client";
+import React from "react";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
-import MagicButton from './ui/MagicButton';
-import { FaLocationArrow } from 'react-icons/fa';
-
+import { Button } from "./ui/moving-border";
+import { BackgroundLines } from "@/components/ui/background-lines";
+import { VscSend } from "react-icons/vsc";
 const Hero = () => {
   return (
     <div className="relative h-screen w-full">
-      {/* Background Spotlights */}
-      <Spotlight
-        className="absolute top-0 left-0 h-full w-full"
-        fill="white"
-      />
-      <Spotlight
-        className="absolute top-0 left-0 h-full w-full opacity-50"
-        fill="purple"
-      />
-      <Spotlight className="absolute top-0 left-0 h-full w-full opacity-30" fill="blue" />
-
-      {/* Overlay with radial gradient */}
-      <div
-        className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
-        bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"
-      />
-
-      {/* Content Section */}
-      <div className="flex justify-center relative my-20 z-10">
-        <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
-            HELLO WORLD;
-          </p>
-          <TextGenerateEffect
-            words="Building Dynamic Solutions from Backend Logic to Frontend Delight."
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Aman Kumar Singh, a Next.js Developer based in Bengaluru.
-          </p>
-
-          <a href="#about">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
+      <BackgroundLines>
+        {/* Content Section */}
+        <div className="flex justify-center relative my-20 z-10">
+          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
+            <p className="uppercase tracking-widest text-lg md:text-2xl lg:text-3xl text-center text-blue-100 max-w-80">
+              HELLO WORLD;
+            </p>
+            
+            <TextGenerateEffect
+              words="Building Dynamic Solutions from Backend Logic to Frontend Delight."
+              className="text-center text-[40px] text-2xl md:text-3xl lg:text-5xl"
             />
-          </a>
+            <p className="text-center text-base md:text-lg lg:text-2xl mb-20 tracking-wide md:tracking-wider">
+              I specialize in full-stack development with a strong passion for
+              problem-solving, particularly in JavaScript and Next.js. Over the
+              years, I’ve developed a versatile skill set, enabling me to adapt
+              to various challenges across both front-end and back-end. My
+              journey as a developer began early, and I’m driven to deliver
+              efficient solutions and tackle complex problems.
+            </p>
+
+            <a href="https://krunker.io/">
+              <Button
+                borderRadius="1.75rem"
+                className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800
+                  px-4 py-2 text-sm md:px-6 md:py-3 md:text-lg lg:px-8 lg:py-4 lg:text-xl"
+              >
+                Play
+                <VscSend className="ml-2 md:ml-3 text-base md:text-lg lg:text-xl" />
+              </Button>
+            </a>
+          </div>
         </div>
-      </div>
+      </BackgroundLines>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "@/utils/cn";
 
 export const BentoGrid = ({
   className,
@@ -8,6 +8,10 @@ export const BentoGrid = ({
   children?: React.ReactNode;
 }) => {
   return (
+    <div>
+      <p className="text-2xl md:text-4xl font-bold pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+        Web Development Skillset
+      </p>
     <div
       className={cn(
         "grid md:auto-rows-[18rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
@@ -15,6 +19,7 @@ export const BentoGrid = ({
       )}
     >
       {children}
+    </div>
     </div>
   );
 };
