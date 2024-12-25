@@ -28,7 +28,8 @@ const Hero = () => {
               efficient solutions and tackle complex problems.
             </p>
 
-            <a href="https://krunker.io/">
+            <a href="https://drive.google.com/uc?export=download&id=18D3ot7R-VMWJyQCsvdJkHJoRrYhNS1KL
+">
               <Button
                 borderRadius="1.75rem"
                 className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800

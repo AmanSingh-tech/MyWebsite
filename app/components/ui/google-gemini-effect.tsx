@@ -22,17 +22,17 @@ const people = [
   {
     id: 4,
     name: "C++",
-    designation: "Hypertext Markup Language",
+    designation: "C++",
   },
   {
     id: 5,
     name: "Java",
-    designation: "Hypertext Markup Language",
+    designation: "Java",
   },
   {
     id: 6,
     name: "C",
-    designation: "Hypertext Markup Language",
+    designation: "C",
   },
 ];
 
