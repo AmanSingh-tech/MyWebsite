@@ -28,7 +28,7 @@ const Hero = () => {
               efficient solutions and tackle complex problems.
             </p>
 
-            <a href="https://drive.google.com/uc?export=download&id=18D3ot7R-VMWJyQCsvdJkHJoRrYhNS1KL
+            <a href="
 ">
               <Button
                 borderRadius="1.75rem"
