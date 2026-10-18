@@ -66,10 +66,10 @@ export default async function Home() {
         <SectionTitle index="✦" kicker="A little about me" title="About" />
         <div className="grid gap-12 lg:grid-cols-2">
           <Reveal>
-            <p className="font-display text-3xl leading-snug text-ink sm:text-4xl">
-              CS @ Manipal, Bengaluru. Ex-intern at <span className="text-sugar">Google</span> &{" "}
-              <span className="text-sugar">AlgoUniversity</span>. I think in data structures and ship in small, well-tested
-              steps.
+            <p className="text-balance font-display text-3xl leading-snug text-ink sm:text-4xl">
+              Computer Science at Manipal, Bengaluru. Previously interned at <span className="text-sugar">Google</span> and{" "}
+              <span className="text-sugar">AlgoUniversity</span>. I think in data structures and ship in small,{" "}
+              <span className="whitespace-nowrap">well-tested</span> steps.
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {site.skills.map((s) => (

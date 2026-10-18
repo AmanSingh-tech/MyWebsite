@@ -15,7 +15,7 @@ export const site = {
   links: {
     github: "https://github.com/AmanSingh-tech",
     linkedin: "https://www.linkedin.com/in/aman-singh-9b2a5a237/",
-    resume: "https://drive.google.com/file/d/1_Qd0X3RBdNUT4sJKguKN1YP4U2RGMI8i/view?usp=sharing",
+    resume: "https://drive.google.com/file/d/1Ohady_E0Uaevul230wRSfKEgY4WuPCPS/view?usp=sharing",
     codeforces: "https://codeforces.com/profile/vander_wal",
     leetcode: "https://leetcode.com/u/aman_singh-tech/",
     leetcodeAlt: "https://leetcode.com/u/_its_aman_singh_/",
