@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# aman singh · portfolio
 
-## Getting Started
+A warm, playful single-page portfolio (inspired by mildsugardesign.jp), built with Next.js 14 + Tailwind.
 
-First, run the development server:
+- **Work** is pulled from GitHub automatically and refreshed once a day (ISR), so new repos and pushes appear with no redeploy.
+- **Numbers** are pulled live from LeetCode and Codeforces, on the same daily refresh.
+- **Hire me** form emails submissions to your Gmail (sent from your own Gmail account via an App Password). Hit Reply and it goes to the visitor.
+
+## Run locally
 
 ```bash
+npm install
+# create .env.local with GMAIL_APP_PASSWORD=... and GITHUB_TOKEN=...
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deploy (Vercel)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In **Project → Settings → Environment Variables** add:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Variable | Needed? | What it does |
+| --- | --- | --- |
+| `GMAIL_APP_PASSWORD` | yes, for the form | 16-letter App Password from Google Account → Security → 2-Step Verification → App passwords. Without it, the form offers a mailto fallback. |
+| `GITHUB_TOKEN` | recommended | Classic token with **no scopes**. Avoids GitHub's 60 req/hr anonymous limit on shared build IPs. |
+| `GMAIL_USER` / `CONTACT_TO` | optional | Sending account (defaults to the email in `site.ts`) / delivery address (defaults to `GMAIL_USER`). |
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+Everything personal is in [`app/lib/site.ts`](app/lib/site.ts):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `site`: name, bio, links, skills
+- `cases`: experience cards
+- `achievements`: highlights list
+- `featuredRepos`: repos pinned to the top of **Work** (the rest sort by latest push)
+- `hiddenRepos`: repos never shown
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To feature a project well, give the repo a **description**, **topics**, and a **website** URL on GitHub. The cards use all three, and the website shows up as a "Live demo" button.
