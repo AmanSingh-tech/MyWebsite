@@ -35,10 +35,10 @@ export default function Header() {
       {/* Logo + disciplines sit at the top of the page, like a letterhead */}
       <div className="wrap absolute inset-x-0 top-0 z-30 flex pt-5 sm:pt-7">
         <div>
-          <a href="#home" className="font-display text-2xl text-ink sm:text-3xl" data-cursor="Top">
+          <a href="#home" className="font-display text-4xl text-ink sm:text-5xl" data-cursor="Top">
             {site.short}
           </a>
-          <p className="mt-1 font-display text-[11px] leading-[1.45] text-ink-soft sm:text-xs">
+          <p className="mt-2 font-display text-sm leading-[1.5] text-ink-soft sm:text-base">
             {site.disciplines.map((d) => (
               <span key={d} className="block">
                 {d}

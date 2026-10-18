@@ -44,7 +44,7 @@ export default function HireForm() {
   if (status.kind === "sent") {
     return (
       <div className="flex min-h-[420px] flex-col items-start justify-center rounded-[36px] bg-white/70 p-8 sm:p-12" role="status">
-        <p className="font-display text-5xl text-ink">Thanks! 🤝</p>
+        <p className="font-display text-5xl text-ink">Thanks!</p>
         <p className="mt-4 max-w-md text-lg text-ink-soft">
           Your message landed in my inbox. I usually reply within a day or two.
         </p>

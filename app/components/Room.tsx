@@ -14,7 +14,7 @@ const SKY: Record<Time, [string, string]> = {
 
 const LINES: Record<Time, string[]> = {
   morning: ["Good morning! ☕", "Coffee first, then code.", "Click me again 👀"],
-  day: ["Hey! 🤝", "Need an engineer?", "I like C++ and calm UIs.", "Scroll down, there's more!"],
+  day: ["Hey!", "Need an engineer?", "I like C++ and calm UIs.", "Scroll down, there's more!"],
   dusk: ["Good evening! 🌇", "Shipping one last commit…", "Want to build something?"],
   night: ["Still up? Me too 🌙", "Night = contest time.", "Leave a note below!"],
   late: ["zzz… 💤", "(sleep-talking) …O(n log n)…", "Leave a message, I'll reply in the morning!"],

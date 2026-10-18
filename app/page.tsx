@@ -32,11 +32,11 @@ export default async function Home() {
   return (
     <main id="home">
       {/* ── Hero: the room + a side note, like a letter ───────────────────── */}
-      <section className="wrap grid min-h-[100svh] items-center gap-10 pb-16 pt-36 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-28">
+      <section className="wrap grid min-h-[100svh] items-center gap-10 pb-16 pt-52 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-48">
         <Room />
 
         <div className="flex flex-col">
-          <p className="font-display text-4xl text-ink sm:text-5xl">Hey! 🤝</p>
+          <p className="font-display text-4xl text-ink sm:text-5xl">Hey!</p>
           <p className="mt-4 font-display text-2xl leading-snug text-ink sm:text-3xl">
             I&rsquo;m {site.name.split(" ")[0]},
             <br />a software engineer
