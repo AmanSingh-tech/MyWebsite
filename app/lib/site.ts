@@ -89,8 +89,9 @@ export const achievements = [
   "Top 15 at HackNite AWS Hackathon · GSSoC contributor",
 ];
 
-// Repos listed here are pinned to the top of "Work" (if they exist on GitHub).
-// Everything else is pulled automatically and sorted by most recent activity.
+// "Work" shows the repos pinned on your GitHub profile first (needs GITHUB_TOKEN),
+// then everything else by most recent push. This list is only the fallback
+// used when pinned repos can't be read.
 export const featuredRepos = ["Custo", "ReachAI", "NeuraAdapt-AI"];
 
 // Repos to never show (profile README repos, coursework, etc.). Case-insensitive.
@@ -100,5 +101,6 @@ export const hiddenRepos = ["AmanSingh-tech", "MyWebsite"];
 export const repoBlurbs: Record<string, string> = {
   custo: "Policy-constrained AI support triage: classifies conversations, ranks permitted actions and routes uncertain cases to humans.",
   reachai: "Local-first agentic outreach: job discovery, ranking, company research and grounded LLM drafts with human approval.",
+  codearena: "Online judge built at AlgoUniversity: real-time multi-language code execution, rankings, DSA scheduling and Gemini-powered resume analysis.",
   "neuraadapt-ai": "Real-time confusion detection from eye movement, surfacing the right video clips and transcripts for revision.",
 };

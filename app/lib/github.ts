@@ -30,7 +30,32 @@ type ApiRepo = {
 // show up on the live site without a redeploy.
 export const REVALIDATE_SECONDS = 60 * 60 * 24;
 
-export async function getRepos(limit = 9): Promise<Repo[]> {
+// Repos pinned on the GitHub profile, in profile order. Pinned items are only
+// exposed via GraphQL, which needs a token (any token, no scopes required).
+async function getPinned(): Promise<string[] | null> {
+  const token = process.env.GITHUB_TOKEN;
+  if (!token) return null;
+  try {
+    const res = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify({
+        query: `query($login:String!){ user(login:$login){ pinnedItems(first:6, types:REPOSITORY){ nodes{ ... on Repository { name } } } } }`,
+        variables: { login: site.handles.github },
+      }),
+      next: { revalidate: REVALIDATE_SECONDS },
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    const nodes: { name?: string }[] | undefined = json?.data?.user?.pinnedItems?.nodes;
+    const names = nodes?.map((n) => n.name).filter((n): n is string => !!n);
+    return names?.length ? names : null;
+  } catch {
+    return null;
+  }
+}
+
+export async function getRepos(limit = 12): Promise<Repo[]> {
   const headers: HeadersInit = {
     Accept: "application/vnd.github+json",
     "X-GitHub-Api-Version": "2022-11-28",
@@ -46,9 +71,11 @@ export async function getRepos(limit = 9): Promise<Repo[]> {
     );
     if (!res.ok) throw new Error(`GitHub ${res.status}`);
     const data = (await res.json()) as ApiRepo[];
+    // Featured = your pinned repos on GitHub; falls back to featuredRepos in site.ts.
+    const pinned = await getPinned();
 
     const hidden = new Set(hiddenRepos.map((n) => n.toLowerCase()));
-    const featured = featuredRepos.map((n) => n.toLowerCase());
+    const featured = (pinned ?? featuredRepos).map((n) => n.toLowerCase());
 
     const repos = data
       .filter((r) => !r.fork && !r.archived && !r.private && !hidden.has(r.name.toLowerCase()))

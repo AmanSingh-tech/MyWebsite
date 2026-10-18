@@ -27,7 +27,7 @@ function SectionTitle({ index, title, kicker }: { index: string; title: string; 
 }
 
 export default async function Home() {
-  const [repos, stats] = await Promise.all([getRepos(9), getCodingStats()]);
+  const [repos, stats] = await Promise.all([getRepos(12), getCodingStats()]);
 
   return (
     <main id="home">

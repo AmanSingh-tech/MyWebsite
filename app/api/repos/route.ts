@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    return NextResponse.json(await getRepos(9));
+    return NextResponse.json(await getRepos(12));
   } catch {
     return NextResponse.json([], { status: 502 });
   }
