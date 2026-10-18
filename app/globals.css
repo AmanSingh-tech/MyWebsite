@@ -3,9 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --paper: #f7f5f1;
-  --ink: #3c3728;
-  --sugar: #fea831;
+  --paper: 247 245 241;
+  --paper-deep: 239 235 227;
+  --card: 255 255 255;
+  --ink: 60 55 40;
+  --ink-soft: 111 104 85;
+  --ink-faint: 163 156 137;
+  --sugar-soft: 255 226 184;
+  color-scheme: light;
+}
+
+.dark {
+  --paper: 28 26 21;
+  --paper-deep: 37 34 27;
+  --card: 46 42 34;
+  --ink: 242 237 227;
+  --ink-soft: 190 182 164;
+  --ink-faint: 135 127 109;
+  --sugar-soft: 77 58 26;
+  color-scheme: dark;
 }
 
 html {
@@ -15,14 +31,15 @@ html {
 }
 
 body {
-  background: var(--paper);
-  color: var(--ink);
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
+  transition: background-color 0.4s, color 0.4s;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--sugar);
-  color: var(--ink);
+  background: #fea831;
+  color: #3c3728;
 }
 
 /* Loader holds the page still until it's gone */
@@ -59,7 +76,7 @@ html.is-loading body {
   }
 
   .field {
-    @apply w-full rounded-2xl border-2 border-ink/10 bg-white/70 px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-sugar;
+    @apply w-full rounded-2xl border-2 border-ink/10 bg-card/70 px-4 py-3 text-base text-ink outline-none transition-colors placeholder:text-ink-faint focus:border-sugar;
   }
 }
 

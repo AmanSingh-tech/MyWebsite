@@ -26,7 +26,7 @@ export function prettyName(name: string) {
 export default function RepoCard({ repo, index }: { repo: Repo; index: number }) {
   const updated = new Date(repo.pushedAt).toLocaleDateString("en-US", { month: "short", year: "numeric" });
   return (
-    <article className="group relative flex h-full flex-col rounded-[32px] bg-white/60 p-7 transition-all duration-500 ease-pop hover:-translate-y-1 hover:-rotate-1 hover:bg-white">
+    <article className="group relative flex h-full flex-col rounded-[32px] bg-card/60 p-7 transition-all duration-500 ease-pop hover:-translate-y-1 hover:-rotate-1 hover:bg-card">
       <div className="flex items-start justify-between">
         <span className="font-display text-4xl text-sugar">{pad(index + 1)}</span>
         {repo.featured && <span className="chip border-sugar bg-sugar-soft text-ink">Featured</span>}
@@ -62,7 +62,7 @@ export default function RepoCard({ repo, index }: { repo: Repo; index: number })
           target="_blank"
           rel="noreferrer"
           data-cursor="Live"
-          className="relative z-10 mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-ink px-4 py-1.5 font-display text-sm text-paper hover:bg-sugar hover:text-ink"
+          className="relative z-10 mt-4 inline-flex w-fit items-center gap-2 rounded-full bg-ink px-4 py-1.5 font-display text-sm text-paper hover:bg-sugar hover:text-cocoa"
         >
           Live demo <Arrow className="h-3 w-3" />
         </a>

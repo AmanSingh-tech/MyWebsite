@@ -56,7 +56,7 @@ export default function Stalker() {
   return (
     <div ref={el} aria-hidden="true" className="pointer-events-none fixed left-0 top-0 z-[90]">
       <div
-        className="flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-sugar font-display text-sm text-ink mix-blend-multiply transition-[width,height,opacity] duration-300 ease-pop"
+        className="flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-sugar font-display text-sm text-cocoa mix-blend-multiply dark:mix-blend-normal transition-[width,height,opacity] duration-300 ease-pop"
         style={{ width: size, height: size, opacity: visible ? (hovering && !label ? 0.55 : 1) : 0 }}
       >
         <span className={`whitespace-nowrap transition-opacity duration-200 ${label ? "opacity-100" : "opacity-0"}`}>

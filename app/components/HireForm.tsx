@@ -43,7 +43,7 @@ export default function HireForm() {
 
   if (status.kind === "sent") {
     return (
-      <div className="flex min-h-[420px] flex-col items-start justify-center rounded-[36px] bg-white/70 p-8 sm:p-12" role="status">
+      <div className="flex min-h-[420px] flex-col items-start justify-center rounded-[36px] bg-card/70 p-8 sm:p-12" role="status">
         <p className="font-display text-5xl text-ink">Thanks!</p>
         <p className="mt-4 max-w-md text-lg text-ink-soft">
           Your message landed in my inbox. I usually reply within a day or two.
@@ -60,7 +60,7 @@ export default function HireForm() {
   }
 
   return (
-    <form onSubmit={submit} className="rounded-[36px] bg-white/60 p-6 sm:p-10">
+    <form onSubmit={submit} className="rounded-[36px] bg-card/60 p-6 sm:p-10">
       <fieldset>
         <legend className="eyebrow mb-3">What brings you here?</legend>
         <div className="flex flex-wrap gap-2">
@@ -119,7 +119,7 @@ export default function HireForm() {
           type="submit"
           disabled={status.kind === "sending"}
           data-cursor="Send!"
-          className="group inline-flex items-center gap-3 rounded-full bg-sugar px-7 py-4 font-display text-xl text-ink transition-transform duration-300 ease-pop hover:-rotate-2 hover:scale-[1.03] disabled:opacity-60"
+          className="group inline-flex items-center gap-3 rounded-full bg-sugar px-7 py-4 font-display text-xl text-cocoa transition-transform duration-300 ease-pop hover:-rotate-2 hover:scale-[1.03] disabled:opacity-60"
         >
           <span className="roll">
             <span>{status.kind === "sending" ? "Sending…" : "Say “Hey!”"}</span>

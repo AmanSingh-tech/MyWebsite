@@ -1,11 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
-const KEY = "seen-hey";
-
-// Runs before paint (inlined in <head>) so returning visitors never see a flash of the loader.
-export const loaderBootScript = `try{if(sessionStorage.getItem("${KEY}"))document.documentElement.classList.add("skip-loader");else document.documentElement.classList.add("is-loading")}catch(e){}`;
+import { LOADER_KEY as KEY } from "@/lib/boot";
 
 export default function Loader() {
   const [phase, setPhase] = useState<"show" | "leave" | "gone">("show");

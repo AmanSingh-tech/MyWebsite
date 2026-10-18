@@ -108,7 +108,7 @@ export default function Header() {
             href={site.links.resume}
             target="_blank"
             rel="noreferrer"
-            className="mt-5 inline-flex items-center gap-2 rounded-full bg-sugar px-4 py-1.5 text-sm text-ink transition-transform hover:-rotate-2"
+            className="mt-5 inline-flex items-center gap-2 rounded-full bg-sugar px-4 py-1.5 text-sm text-cocoa transition-transform hover:-rotate-2"
           >
             Résumé ↗
           </a>

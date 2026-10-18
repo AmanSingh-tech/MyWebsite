@@ -3,8 +3,10 @@ import { Nunito, Righteous } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import Header from "./components/Header";
-import Loader, { loaderBootScript } from "./components/Loader";
+import Loader from "./components/Loader";
 import Stalker from "./components/Stalker";
+import ThemeToggle from "./components/ThemeToggle";
+import { bootScript } from "@/lib/boot";
 
 const display = Righteous({ weight: "400", subsets: ["latin"], variable: "--font-display", display: "swap" });
 const body = Nunito({ subsets: ["latin"], variable: "--font-body", display: "swap" });
@@ -20,13 +22,18 @@ export const metadata: Metadata = {
   twitter: { card: "summary", title: site.name, description },
 };
 
-export const viewport: Viewport = { themeColor: "#f7f5f1" };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f5f1" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1a15" },
+  ],
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${body.variable}`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: loaderBootScript }} />
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
         <noscript>
           <style>{`.reveal{opacity:1!important;transform:none!important}.loader{display:none!important}`}</style>
         </noscript>
@@ -34,6 +41,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="font-sans">
         <Loader />
         <Header />
+        <ThemeToggle />
         {children}
         <Stalker />
       </body>

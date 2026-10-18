@@ -2,12 +2,21 @@ import type { Config } from "tailwindcss";
 
 const config = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}"],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        paper: { DEFAULT: "#f7f5f1", deep: "#efebe3" },
-        ink: { DEFAULT: "#3c3728", soft: "#6f6855", faint: "#a39c89" },
-        sugar: { DEFAULT: "#fea831", soft: "#ffe2b8" },
+        // Themed colours are RGB triplets in globals.css so /opacity modifiers still work.
+        paper: { DEFAULT: "rgb(var(--paper) / <alpha-value>)", deep: "rgb(var(--paper-deep) / <alpha-value>)" },
+        card: "rgb(var(--card) / <alpha-value>)",
+        ink: {
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          faint: "rgb(var(--ink-faint) / <alpha-value>)",
+        },
+        sugar: { DEFAULT: "#fea831", soft: "rgb(var(--sugar-soft) / <alpha-value>)" },
+        // Text that sits on orange stays dark in both themes.
+        cocoa: "#3c3728",
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],

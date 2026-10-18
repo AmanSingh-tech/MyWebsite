@@ -54,7 +54,7 @@ export default async function Home() {
             <RollLink href="#cases" cursor="Go!" className="text-3xl sm:text-4xl">
               Get to know me
             </RollLink>
-            <a href="#hire" className="chip border-sugar bg-sugar-soft text-ink hover:bg-sugar">
+            <a href="#hire" className="chip border-sugar bg-sugar-soft text-ink hover:bg-sugar hover:text-cocoa">
               ● Open to opportunities
             </a>
           </div>
@@ -73,7 +73,7 @@ export default async function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-2">
               {site.skills.map((s) => (
-                <span key={s} className="chip bg-white/60">
+                <span key={s} className="chip bg-card/60">
                   {s}
                 </span>
               ))}
@@ -107,7 +107,7 @@ export default async function Home() {
         <div className="space-y-5">
           {cases.map((c, i) => (
             <Reveal key={c.org} delay={i * 80}>
-              <details className="group/case rounded-[32px] bg-white/60 transition-colors duration-300 open:bg-white hover:bg-white" open={i === 0}>
+              <details className="group/case rounded-[32px] bg-card/60 transition-colors duration-300 open:bg-card hover:bg-card" open={i === 0}>
                 <summary
                   data-cursor="Open"
                   className="flex cursor-pointer list-none items-center gap-5 p-6 sm:gap-8 sm:p-8 [&::-webkit-details-marker]:hidden"
@@ -268,6 +268,7 @@ export default async function Home() {
 }
 
 function StatCard({ href, label, value, note, accent }: { href: string; label: string; value: string; note: string; accent?: boolean }) {
+  const fg = accent ? "text-cocoa" : "text-ink";
   return (
     <a
       href={href}
@@ -275,12 +276,12 @@ function StatCard({ href, label, value, note, accent }: { href: string; label: s
       rel="noreferrer"
       data-cursor="Profile"
       className={`group flex h-full flex-col justify-between rounded-[32px] p-8 transition-transform duration-500 ease-pop hover:-rotate-1 ${
-        accent ? "bg-sugar" : "bg-white/60 hover:bg-white"
+        accent ? "bg-sugar" : "bg-card/60 hover:bg-card"
       }`}
     >
-      <p className="eyebrow text-ink">{label}</p>
-      <p className="my-6 font-display text-7xl text-ink sm:text-8xl">{value}</p>
-      <p className="flex items-center justify-between text-sm font-semibold text-ink">
+      <p className={`eyebrow ${fg}`}>{label}</p>
+      <p className={`my-6 font-display text-7xl sm:text-8xl ${fg}`}>{value}</p>
+      <p className={`flex items-center justify-between text-sm font-semibold ${fg}`}>
         {note}
         <Arrow className="h-4 w-4 transition-transform duration-500 ease-pop group-hover:rotate-45" />
       </p>

@@ -93,7 +93,7 @@ export default function Room() {
       {/* speech bubble */}
       <div
         key={line}
-        className="absolute left-[6%] top-[7%] z-10 max-w-[48%] animate-[float_4s_ease-in-out_infinite] rounded-2xl rounded-bl-sm bg-white px-4 py-2.5 font-display text-sm text-ink shadow-[0_8px_24px_-12px_rgba(60,55,40,.45)] sm:text-base"
+        className="absolute left-[6%] top-[7%] z-10 max-w-[48%] animate-[float_4s_ease-in-out_infinite] rounded-2xl rounded-bl-sm bg-card px-4 py-2.5 font-display text-sm text-ink shadow-[0_8px_24px_-12px_rgba(60,55,40,.45)] sm:text-base"
         aria-live="polite"
       >
         {bubble}
@@ -128,8 +128,8 @@ export default function Room() {
             </>
           )}
         </g>
-        <rect x="238" y="38" width="128" height="112" rx="20" fill="none" stroke="#3c3728" strokeWidth="6" />
-        <path d="M302 38v112M238 94h128" stroke="#3c3728" strokeWidth="4" />
+        <rect x="238" y="38" width="128" height="112" rx="20" fill="none" strokeWidth="6" className="stroke-ink" />
+        <path d="M302 38v112M238 94h128" strokeWidth="4" className="stroke-ink" />
 
         {/* plant */}
         <g transform="translate(46 168)">
