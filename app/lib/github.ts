@@ -81,7 +81,3 @@ export async function getRepos(limit = 9): Promise<Repo[]> {
     throw err;
   }
 }
-
-export function prettyName(name: string) {
-  return name.replace(/[-_]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-}
